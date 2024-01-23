@@ -1,7 +1,3 @@
-//
-// Created by kolonist on 18.03.2023.
-//
-
 #ifndef CONSOLE_ROGUELIKE_CPP_PLAYERITEMS_H
 #define CONSOLE_ROGUELIKE_CPP_PLAYERITEMS_H
 #include "Utility.h"

@@ -54,8 +54,6 @@ class PlayerController : public Player {
 private:
     string PlayerSymbol{"@"};
 
-    //lvl 1 - 28 14
-    //lvl 2-3 5 2
 public:
     vector<InvSlot> Inventory; //Utility.h
 
@@ -73,6 +71,7 @@ public:
     void InteractWith(Player & Player, GameLevel & Level, int x, int y, int flag);
     string GetPlayerSymbol();
     void MovementInit(Player & Player, GameLevel & Level);
+    void Battle(Player & Player, int x_enemy, int y_enemy, int x_player, int y_player);
     int WallCheck(GameLevel & Level, int x, int y);
     void CheckForEnemiesAround(GameLevel & Level, Player & Player, int x, int y);
     void Capybara(Player & Player);
@@ -85,18 +84,8 @@ public:
 
 class Enemy : public Character {
 public:
-    Enemy(int EnemyType); //0 - DefaultEnemy, 1 - Boss
+    Enemy(int EnemyType);
     Enemy();
-};
-
-
-class EnemyAI : public PlayerController {
-private:
-    string EnemySymbol{"&"};
-public:
-    EnemyAI();
-    string GetEnemySymbol();
-    void AutoMovement(GameLevel & Level, int x, int y);
 };
 
 /*=====================================================================================================================================

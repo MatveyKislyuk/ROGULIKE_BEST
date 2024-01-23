@@ -1,7 +1,3 @@
-//
-// Created by kolonist on 18.03.2023.
-//
-
 #include "PlayerItems.h"
 #include "Utility.h"
 
@@ -10,13 +6,14 @@ PlayerItem::PlayerItem(string Name, int Price) {
     this->Price = Price;
 }
 
-
 string PlayerItem::GetName() {
     return Name;
 }
 int PlayerItem::GetPrice() {
     return Price;
 }
+
+
 
 Armor::Armor(string Name, int ArmorPoints, int ArmorPrice) : PlayerItem(Name, ArmorPrice) {
     this->ArmorPoints = ArmorPoints;
@@ -30,9 +27,10 @@ void Armor::SetArmorPoints(int ArmorPoints) {
     this->ArmorPoints = ArmorPoints;
 }
 
-Weapon::Weapon(string Name, int WeaponDamage, int WeaponPrice) : PlayerItem(Name, WeaponPrice) {
-    this->WeaponDamage = WeaponDamage;
 
+
+Weapon::Weapon(string name, int WeaponDamage, int WeaponPrice) : PlayerItem(name, WeaponPrice) {
+    this->WeaponDamage = WeaponDamage;
 }
 
 int Weapon::GetWeaponDamage() {
@@ -43,15 +41,16 @@ void Weapon::SetWeaponDamage(int WeaponDamage) {
     this->WeaponDamage = WeaponDamage;
 }
 
+
+
+Potion::Potion(string Name,int PotionPrice) : PlayerItem(Name, PotionPrice) {
+
+}
+
 int Potion::GetHealth() {
     return Health;
 }
 
-
 int Potion::GetStamina() {
     return Stamina;
-}
-
-Potion::Potion(string Name,int PotionPrice) : PlayerItem(Name, PotionPrice) {
-
 }
